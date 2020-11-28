@@ -34,5 +34,19 @@ def main():
 
     print('The count of all expenses: ', str(len(myBudgetList)))
 
+    for entry in myBudgetList:
+        print(entry)
+
 if __name__ == "__main__":
     main()
+
+def __iter__(self):
+    iter = iter(self.expenses)
+    self.iter_o = iter(self.overages)
+    return self
+
+def __next__(self):
+    try:
+        return __next__(self.iter_e)
+    except StopIteration as stop:
+        return __next__(self.iter_o)
