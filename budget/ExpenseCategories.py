@@ -12,17 +12,17 @@ def main():
 
     for a,b in zip(divided_for_loop, divided_set_comp):
         if a.issubset(b) != b.issubset(a):
-            print("Sets are NOT equal by subset test" +
+            print("Sets are NOT equal by subset test")
 
-            timeit.timeit(stmt="expenses.categorize_for_loop()", setup='''
+    timeit.timeit(stmt="expenses.categorize_for_loop()", setup='''
 
-            from . import Expense
+    from . import Expense
 
-            expenses = Expense.Expenses()
+    expenses = Expense.Expenses()
 
-            expenses.read_expenses('data/spending_data.csv')
+    expenses.read_expenses('data/spending_data.csv')
 
-            ''', number=100000, globals=globals()))
+    ''', number=100000, globals=globals())
 
 if __name__ == "__main__":
     main()
